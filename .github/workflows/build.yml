@@ -5,6 +5,7 @@ on: push
 jobs:
   unit:
     steps:
+    runs-on: ubuntu-latest
       - run: echo "Run unit tests"
   build:
     runs-on: ubuntu-latest
