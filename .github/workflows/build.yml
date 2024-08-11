@@ -12,6 +12,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: make build-env
-      - run: make build
+      - name: Create virtual environment for building
+        run: make build-env
+      - name: Create python wheel
+        run: make build
+      - name: Archive wheel
+        uses: actions/upload-artifact/v4
+        with:
+          name: wheel
+          path: dist/*.whl
     needs: unit-tests
