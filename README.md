@@ -1,1 +1,1 @@
-[![build](https://github.com/mzeyfert/finance/actions/workflows/build.yml/badge.svg?branch=issue-1)](https://github.com/mzeyfert/finance/actions/workflows/build.yml)
+[![build](https://github.com/mzeyfert/finance/actions/workflows/build.yml/badge.svg?branch="$GITHUB_REF")](https://github.com/mzeyfert/finance/actions/workflows/build.yml)

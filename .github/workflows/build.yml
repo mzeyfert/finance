@@ -9,13 +9,13 @@ jobs:
       - uses: actions/checkout@v4
       - run: make unit
   build:
-    run:
-      env:
-        DEBUG: true
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - run: ls -la
       - run: make build
+        env:
+          DEBUG: "here is debug"
+      - run: echo "Имя текущего воркфлоу – $GITHUB_WORKFLOW"
       - run: make show
     needs: unit
