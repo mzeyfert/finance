@@ -5,7 +5,7 @@ on: push
 jobs:
   unit:
     steps:
-      - runs: echo "Run unit tests"
+      - run: echo "Run unit tests"
   build:
     runs-on: ubuntu-latest
     steps:
