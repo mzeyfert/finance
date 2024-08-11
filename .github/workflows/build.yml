@@ -19,6 +19,6 @@ jobs:
       - name: Archive wheel
         uses: actions/upload-artifact@v4
         with:
-          name: wheel
+          name: wheels
           path: dist/*.whl
     needs: unit-tests
