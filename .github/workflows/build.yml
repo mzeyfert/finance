@@ -4,6 +4,6 @@ on: push
 
 jobs:
   build:
-    runs-on: debian
+    runs-on: ubuntu-latest
     steps:
       - run: ls -la
