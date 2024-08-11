@@ -1,9 +1,24 @@
 name: build
 
-on: push
+on: [push]
 
 jobs:
-  build:
-    runs-on: debian
+  unit-tests:
+    runs-on: [ubuntu-latest]
     steps:
-      - run: ls -la
+      - uses: actions/checkout@v4
+      - run: make unit-tests
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Create virtual environment for building
+        run: make build-env
+      - name: Create python wheel
+        run: make build
+      - name: Archive wheel
+        uses: actions/upload-artifact@v4
+        with:
+          name: wheels
+          path: dist/*.whl
+    needs: unit-tests
