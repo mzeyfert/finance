@@ -1,21 +1,17 @@
 name: build
 
-on: push
+on: [push]
 
 jobs:
-  unit:
-    runs-on: ubuntu-latest
+  unit-tests:
+    runs-on: [ubuntu-latest]
     steps:
       - uses: actions/checkout@v4
-      - run: make unit
+      - run: make unit-tests
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: ls -la
+      - run: make build-env
       - run: make build
-        env:
-          DEBUG: "here is debug"
-      - run: echo "Имя текущего воркфлоу – $GITHUB_WORKFLOW"
-      - run: make show
     needs: unit
