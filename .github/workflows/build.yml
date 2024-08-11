@@ -14,4 +14,4 @@ jobs:
       - uses: actions/checkout@v4
       - run: make build-env
       - run: make build
-    needs: unit
+    needs: unit-tests
