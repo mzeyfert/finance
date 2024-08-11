@@ -2,7 +2,9 @@ unit:
 	@ echo "Run unit tests"
 
 build:
-	@ touch test_file
+	@env
+	@echo $(DEBUG)
+	@touch test_file
 
 show:
 	ls -la
