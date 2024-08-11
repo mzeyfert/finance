@@ -1,5 +1,8 @@
+unit:
+	@ echo "Run unit tests"
+
 build:
-	touch test_file
+	@ touch test_file
 
 show:
 	ls -la

@@ -6,7 +6,7 @@ jobs:
   unit:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Run unit tests"
+      - run: make unit
   build:
     runs-on: ubuntu-latest
     steps:
