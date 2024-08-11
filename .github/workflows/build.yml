@@ -3,6 +3,9 @@ name: build
 on: push
 
 jobs:
+  unit:
+    steps:
+      - runs: echo "Run unit tests"
   build:
     runs-on: ubuntu-latest
     steps:
@@ -10,3 +13,4 @@ jobs:
       - run: ls -la
       - run: make build
       - run: make show
+    needs: unit
