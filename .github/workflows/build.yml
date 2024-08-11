@@ -1,0 +1,9 @@
+name: build
+
+on: push
+
+jobs:
+  build:
+    runs-on: debian
+    steps:
+      - run: ls -la
